@@ -24,4 +24,6 @@ public class Reservation {
     private LocalDateTime kezdoIdo;
 
     private LocalDateTime vegsoIdo;
+
+    private String cancellationCode;
 }

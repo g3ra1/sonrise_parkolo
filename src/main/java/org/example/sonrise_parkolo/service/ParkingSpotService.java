@@ -1,16 +1,10 @@
 package org.example.sonrise_parkolo.service;
 
-import org.example.sonrise_parkolo.dto.input.ParkingSpotInputDTO;
 import org.example.sonrise_parkolo.dto.output.ParkingSpotOutputDTO;
 
+import java.util.List;
+
 public interface ParkingSpotService {
-
-    String createParkingSpot(ParkingSpotInputDTO parkingSpotInputDTO);
-
-    ParkingSpotOutputDTO updateParkingSpot(Long id, ParkingSpotInputDTO parkingSpotInputDTO);
-
-    String deleteParkingSpot(Long id);
-
-    ParkingSpotOutputDTO getParkingSpot(Long id);
-
+    List<ParkingSpotOutputDTO> getAllSpots();
+    ParkingSpotOutputDTO getSpotById(Long id);
 }
