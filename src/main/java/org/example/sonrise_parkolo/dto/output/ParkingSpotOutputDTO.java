@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ParkingSpotOutputDTO {
-    private boolean szabad;
+    private Long spotNumber;
+    private boolean foglalt;
 }

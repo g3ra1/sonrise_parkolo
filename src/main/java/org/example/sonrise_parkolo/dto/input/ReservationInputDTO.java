@@ -18,7 +18,7 @@ public class ReservationInputDTO {
     @NotNull
     private Long parkingspot_id;
 
-    private LocalDateTime kezdo_ido;
+    private LocalDateTime kezdoIdo;
 
-    private LocalDateTime vegso_ido;
+    private LocalDateTime vegsoIdo;
 }

@@ -1,6 +1,6 @@
 package org.example.sonrise_parkolo.dto.input;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,10 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ParkingSpotInputDTO {
-    @NotBlank
+    @NotNull
     private Long id;
+    @NotNull
+    private Long spotNumber;
 
-    private boolean szabad;
+    private boolean foglalt;
 
 
 }

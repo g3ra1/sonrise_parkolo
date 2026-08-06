@@ -13,6 +13,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ReservationOutputDTO {
     private Long parkingSpotId;
-    private LocalDateTime kezdo_ido;
-    private LocalDateTime vegso_ido;
+    private LocalDateTime kezdoIdo;
+    private LocalDateTime vegsoIdo;
 }
