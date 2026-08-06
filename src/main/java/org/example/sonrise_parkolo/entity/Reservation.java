@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Reservation {
     private Long id;
-    private Long parkingspot_id;
+    private Long parkingSpotId;
     private LocalDateTime kezdo_ido;
     private LocalDateTime vegso_ido;
 }
