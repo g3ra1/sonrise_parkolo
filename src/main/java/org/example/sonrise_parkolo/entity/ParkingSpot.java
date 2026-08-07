@@ -1,24 +1,18 @@
 package org.example.sonrise_parkolo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
+
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+@Table(name = "parking_spot")
+@Data
 public class ParkingSpot {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long spotNumber;
-
-    private boolean foglalt;
-
+    @Column(nullable = false)
+    private boolean occupied;
 }

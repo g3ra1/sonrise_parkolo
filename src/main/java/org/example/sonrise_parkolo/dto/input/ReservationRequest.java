@@ -1,6 +1,6 @@
 package org.example.sonrise_parkolo.dto.input;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,13 +12,13 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReservationInputDTO {
-    @NotNull
-    private Long id;
-    @NotNull
-    private Long parkingspot_id;
+public class ReservationRequest {
 
-    private LocalDateTime kezdoIdo;
+    @NotEmpty
+    private String numberPlate;
 
-    private LocalDateTime vegsoIdo;
+    private LocalDateTime startTime;
+
+    @NotEmpty
+    private LocalDateTime endTime;
 }

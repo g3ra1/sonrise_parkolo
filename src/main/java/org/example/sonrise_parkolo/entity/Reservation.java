@@ -1,29 +1,30 @@
 package org.example.sonrise_parkolo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+@Table (name = "reservation")
+@Data
 public class Reservation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long parkingSpotId;
+    @Column(nullable = false)
+    private String numberPlate;
 
-    private LocalDateTime kezdoIdo;
+    private LocalDateTime startTime;
 
-    private LocalDateTime vegsoIdo;
+    private LocalDateTime endTime;
 
-    private String cancellationCode;
+    @Column(nullable = false, unique = true)
+    private String parkingCode;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parking_spot_id", nullable = false)
+    private ParkingSpot parkingSpot;
 }

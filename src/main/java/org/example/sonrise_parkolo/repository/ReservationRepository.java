@@ -11,14 +11,18 @@ import java.util.Optional;
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
-    boolean existsByParkingSpotIdAndKezdoIdoBeforeAndVegsoIdoAfter(
+    boolean existsByParkingSpotIdAndStartTimeBeforeAndEndTimeAfter(
             Long parkingSpotId,
             LocalDateTime endTime,
             LocalDateTime startTime
     );
 
-    Optional<Reservation> findByCancellationCode(String cancellationCode);
+    Optional<Reservation> findByParkingCode(String parkingCode);
+
+    boolean existsByParkingCode(String parkingCode);
+
+    void deleteByParkingCode(String parkingCode);
 
     @Transactional
-    void deleteByVegsoIdoBefore(LocalDateTime now);
+    void deleteByEndTimeBefore(LocalDateTime now);
 }

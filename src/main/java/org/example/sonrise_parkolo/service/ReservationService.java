@@ -1,12 +1,21 @@
 package org.example.sonrise_parkolo.service;
 
-import org.example.sonrise_parkolo.dto.input.ReservationInputDTO;
-import org.example.sonrise_parkolo.entity.Reservation;
+import org.example.sonrise_parkolo.dto.input.ReservationRequest;
+import org.example.sonrise_parkolo.dto.output.ReservationOutputDTO;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public interface ReservationService {
-    Reservation autoBookFirstAvailableSpot(ReservationInputDTO request);
-    void cancelReservation(String cancellationCode);
-    Reservation extendReservation(String cancellationCode, LocalDateTime newEndTime);
+    String autoBookFirstAvailableSpot(ReservationRequest request);
+
+    @Transactional
+    void setParkingCancellation(String parkingCode);
+
+    String extendReservation(String parkingCode, LocalDateTime newEndTime);
+
+    ReservationOutputDTO getParking(String parkingCode);
+
+    List<ReservationOutputDTO> getAllReservation();
 }

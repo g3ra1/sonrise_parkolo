@@ -13,10 +13,8 @@ import lombok.NoArgsConstructor;
 public class ParkingSpotInputDTO {
     @NotNull
     private Long id;
-    @NotNull
-    private Long spotNumber;
 
-    private boolean foglalt;
+    private boolean occupied;
 
 
 }
