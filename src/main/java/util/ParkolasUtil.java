@@ -1,4 +1,4 @@
-package Util;
+package util;
 
 import lombok.AllArgsConstructor;
 import org.sonrise_parkolo.repository.ReservationRepository;
